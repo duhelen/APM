@@ -1,0 +1,35 @@
+
+<div class = "leftside">
+
+  <ul class="leftcolumn">
+      <br>
+      <br>
+    <p>Shop By Category: </p>
+    <br>
+    <li>
+        <a (click)="displayAppliances()"> Appliances</a>
+    </li>
+    <br>
+
+    <li>
+        <a (click)="displayFoods()"> Foods</a>
+    </li>
+    <br>
+    <li>
+        <a (click)="displayHomeGoods()"> HomeGoods</a>
+    </li>
+    <br>
+  </ul>
+
+</div>
+
+<span class="rightcolumn">
+    <br>
+    <br>
+    <br>
+    <br>
+
+  <pm-appliances *ngIf="showingAppliances"></pm-appliances>
+  <pm-foods *ngIf="showingFoods"></pm-foods>
+  <pm-homegoods *ngIf="showingHomeGoods"></pm-homegoods>
+</span>
