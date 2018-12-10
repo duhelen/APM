@@ -70,8 +70,16 @@ export class ProductService {
       ); 
   }
 
+    // getProductTypes(): Observable<Product[]> {
+    //   return this.http.get<Product[]>(this.productTypeUrl)
+    //     .pipe(
+    //       tap(data => console.log(JSON.stringify(data))),
+    //       catchError(this.handleError)
+    //     );
+    // }
+
     getProductsByType(productType: string): Observable<Product[]> {
-      const purl = `${this.productsUrl}/?productType=${productType}`;
+      const purl = `${this.productTypeUrl}/${productType}`;
       return this.http.get<Product[]>(purl)
         .pipe(
           tap(data => console.log('getProductsByType: ' + JSON.stringify(data))),

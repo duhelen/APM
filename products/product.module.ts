@@ -74,7 +74,6 @@ import { ProductListComponent } from './products.component';
     ProductListComponent
     // FoodListComponent,
     // HomeGoodsListComponent
-  ],
-  providers: [ProductListComponent]
+  ]
 })
 export class ProductModule { }
