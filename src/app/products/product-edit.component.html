@@ -26,23 +26,38 @@
 
       <div class="form-group row mb-2">
         <label class="col-md-2 col-form-label"
-               for="productCodeId">Product Code</label>
+               for="productColorId">Product Color</label>
         <div class="col-md-8">
           <input class="form-control"
-                 id="productCodeId"
+                 id="productColorId"
                  type="text"
-                 placeholder="Code (required)"
-                 formControlName="productCode"
-                 [ngClass]="{'is-invalid': displayMessage.productCode}" />
+                 placeholder="Color (required)"
+                 formControlName="productColor"
+                 [ngClass]="{'is-invalid': displayMessage.productColor}" />
           <span class="invalid-feedback">
-            {{displayMessage.productCode}}
+            {{displayMessage.productColor}}
+          </span>
+        </div>
+      </div>
+      <div class="form-group row mb-2">
+        <label class="col-md-2 col-form-label"
+               for="productTypeId">Product Type</label>
+        <div class="col-md-8">
+          <input class="form-control"
+                 id="productTypeId"
+                 type="text"
+                 placeholder="Type (required)"
+                 formControlName="productType"
+                 [ngClass]="{'is-invalid': displayMessage.productType}" />
+          <span class="invalid-feedback">
+            {{displayMessage.productType}}
           </span>
         </div>
       </div>
 
       <div class="form-group row mb-2">
         <label class="col-md-2 col-form-label"
-               for="starRatingId">Star Rating (1-5)</label>
+               for="starRatingId">Customer Rating (1-5)</label>
 
         <div class="col-md-8">
           <input class="form-control"

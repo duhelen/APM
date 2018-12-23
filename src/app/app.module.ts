@@ -9,13 +9,13 @@ import { ProductModule } from './products/product.module';
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 
 import { UserModule } from './user/user.module';
-import { NavComponent } from './nav/nav.component';
+
+import { CartService } from './products/cart.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-    WelcomeComponent,
-    NavComponent
+    WelcomeComponent
   ],
   imports: [
     BrowserModule,
@@ -25,6 +25,7 @@ import { NavComponent } from './nav/nav.component';
     AppRoutingModule,
     ProductModule
   ],
+  providers: [CartService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

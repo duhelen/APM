@@ -5,7 +5,7 @@
             [routerLink]="['/welcome']">Home</a>
       </li>
       <li class='nav-item'><a class='nav-link' routerLinkActive='active' [routerLinkActiveOptions]="{exact: true}"
-            [routerLink]="['/products']">Product List</a>
+            [routerLink]="['/products']">Product Categories</a>
       </li>
       <li class='nav-item'><a class='nav-link' routerLinkActive='active' [routerLinkActiveOptions]="{exact: true}"
             [routerLink]="['/products/0/edit']">Add Product</a>
@@ -23,6 +23,12 @@
                [routerLink]="['/welcome']">Log Out</a>
         </li>        
     </ul>
+    <div class="nav-bar">
+        <!-- <a *ngIf="location.path() !== '/products'" routerLink="/" class="back-button">Back</a> -->
+        <div class="open-shopping-cart" [routerLink]="['/products/cart']">
+          <p class="fa fa-shopping-cart">{{(shoppingCartItems$ | async).length}}</p>
+        </div>
+      </div>
   </nav>
 
   <div class='container'>

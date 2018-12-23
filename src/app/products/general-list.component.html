@@ -1,0 +1,39 @@
+
+<div class="leftside">
+
+  <ul class="leftcolumn">
+
+      <br>
+
+      <br>
+
+    <p>Shop By Category: </p>
+
+    <br>
+
+  <div>
+
+     <a *ngFor="let productTypes of types" >
+
+      <p (click)="displayProductsByType(productTypes)" >
+        {{ productTypes }}
+      </p>
+     
+     </a>
+
+    </div>
+
+    <br>
+    
+  </ul>
+
+</div>
+
+<span class="rightcolumn">
+    <br>
+    <br>
+    <br>
+    <br>
+<pm-products #productlistcomponent> </pm-products>
+  
+</span>

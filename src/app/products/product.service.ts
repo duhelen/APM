@@ -4,16 +4,15 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of, throwError } from 'rxjs';
 import { catchError, tap, map } from 'rxjs/operators';
 
-import { Product, Appliances, Foods, HomeGoods } from './product';
+import { Product } from './product';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductService {
   private productsUrl = 'api/products';
-  private homegoodsUrl = 'api/homegoods';
-  private appliancesUrl = 'api/appliances';
-  private foodsUrl = 'api/foods';
+  productTypeUrl: any;
+  private products: Product[];
 
   constructor(private http: HttpClient) { }
 
@@ -69,65 +68,27 @@ export class ProductService {
       ); 
   }
 
-  getAppliances(): Observable<Appliances[]> {
-    return this.http.get<Appliances[]>(this.appliancesUrl)
-      .pipe(
-        tap(data => console.log(JSON.stringify(data))),
-        catchError(this.handleError)
-      );
-  }
-
-  getAppliance(id: number): Observable<Appliances> {
-    if (id === 0) {
-      return of(this.initializeAppliance()); 
+    getProductsByType(productType: string): Observable<Product[]> {
+      const purl = `${this.productsUrl}/?productType=${productType}`;
+      return this.http.get<Product[]>(purl)
+        .pipe(
+          tap(data => console.log('getProductsByType: ' + JSON.stringify(data))),
+          catchError(this.handleError)
+        );
     }
-    const url = `${this.appliancesUrl}/${id}`;
-    return this.http.get<Appliances>(url)
-      .pipe(
-        tap(data => console.log('getAppliance: ' + JSON.stringify(data))),
-        catchError(this.handleError)
-      );
-  }
 
-  getHomeGoods(): Observable<HomeGoods[]> {
-    return this.http.get<HomeGoods[]>(this.homegoodsUrl)
-      .pipe(
-        tap(data => console.log(JSON.stringify(data))),
-        catchError(this.handleError)
-      );
-  }
+//for cart 
+    // return products 
+    // use getProducts
+    // findAll(): Product[] {
+    //   return this.products;
+    // };
 
-  getHomeGood(id: number): Observable<HomeGoods> {
-    if (id === 0) {
-      return of(this.initializeHomeGood()); 
-    }
-    const url = `${this.homegoodsUrl}/${id}`;
-    return this.http.get<HomeGoods>(url)
-      .pipe(
-        tap(data => console.log('getHomeGoods: ' + JSON.stringify(data))),
-        catchError(this.handleError)
-      );
-  }
+    //getproducts(id) to get by id 
 
-  getFoods(): Observable<Foods[]> {
-    return this.http.get<Foods[]>(this.foodsUrl)
-      .pipe(
-        tap(data => console.log(JSON.stringify(data))),
-        catchError(this.handleError)
-      );
-  }
 
-  getFood(id: number): Observable<Foods> {
-    if (id === 0) {
-      return of(this.initializeFood()); // 85
-    }
-    const url = `${this.foodsUrl}/${id}`;
-    return this.http.get<Foods>(url)
-      .pipe(
-        tap(data => console.log('getFoods: ' + JSON.stringify(data))),
-        catchError(this.handleError)
-      );
-  }
+
+
 
 
 
@@ -152,58 +113,14 @@ export class ProductService {
     return {
       id: 0,
       productName: null,
-      productCode: null,
+      productColor: null,
       tags: [''],
-      releaseDate: null,
+      availability: null,
       price: null,
       description: null,
       starRating: null,
-      imageUrl: null
-    };
-  }
-
-  private initializeAppliance(): Appliances {
-    // Return an initialized object
-    return {
-      id: 0,
-      productName: null,
-      productCode: null,
-      tags: [''],
-      releaseDate: null,
-      price: null,
-      description: null,
-      starRating: null,
-      imageUrl: null
-    };
-  }
-
-  private initializeHomeGood(): HomeGoods {
-    // Return an initialized object
-    return {
-      id: 0,
-      productName: null,
-      productCode: null,
-      tags: [''],
-      releaseDate: null,
-      price: null,
-      description: null,
-      starRating: null,
-      imageUrl: null
-    };
-  }
-
-  private initializeFood(): Foods {
-    // Return an initialized object
-    return {
-      id: 0,
-      productName: null,
-      productCode: null,
-      tags: [''],
-      releaseDate: null,
-      price: null,
-      description: null,
-      starRating: null,
-      imageUrl: null
+      imageUrl: null,
+      productType: null,
     };
   }
 }

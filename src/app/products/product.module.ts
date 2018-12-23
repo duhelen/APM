@@ -10,16 +10,17 @@ import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { ProductData } from './product-data';
 
 import { GeneralListComponent } from './general-list.component';
-import { ApplianceListComponent } from './appliances.component';
-import { HomeGoodsListComponent } from './homegoods.component';
-import { FoodListComponent } from './foods.component';
+// import { ApplianceListComponent } from './appliances.component';
+// import { HomeGoodsListComponent } from './homegoods.component';
+// import { FoodListComponent } from './foods.component';
 import { ProductDetailComponent } from './product-detail.component';
 import { ProductEditComponent } from './product-edit.component';
 import { ProductEditGuard } from './product-edit.guard';
 
-
-
 import { AuthenticGuard } from '../user/authentic-guard.service';
+
+import { ProductListComponent } from './products.component';
+import { CartComponent } from './cart.component';
 
 @NgModule({
   imports: [
@@ -29,41 +30,34 @@ import { AuthenticGuard } from '../user/authentic-guard.service';
     RouterModule.forChild([
       { 
         path: 'products', 
-        canActivate: [ AuthenticGuard ],
-        canLoad: [AuthenticGuard],
+        // canActivate: [ AuthenticGuard ],
+        // canLoad: [AuthenticGuard],
         component: GeneralListComponent },
       { 
         path: 'products/:id',
-        canActivate: [ AuthenticGuard ],
-        canLoad: [AuthenticGuard],
+        // canActivate: [ AuthenticGuard ],
+        // canLoad: [AuthenticGuard],
         component: ProductDetailComponent },
       {
         path: 'products/:id/edit',
-        canActivate: [AuthenticGuard],
-        canLoad: [AuthenticGuard],
+        // canActivate: [AuthenticGuard],
+        // canLoad: [AuthenticGuard],
         canDeactivate: [ProductEditGuard],
         component: ProductEditComponent
       },
+      {
+        path: 'cart',
+        // canActivate: [AuthenticGuard],
+        // canLoad: [AuthenticGuard],
+        // canDeactivate: [ProductEditGuard],
+        component: CartComponent
+      }
       // {
-      //   path: 'appliances',
+      //   path: 'cart/:id/edit',
       //   // canActivate: [AuthenticGuard],
       //   // canLoad: [AuthenticGuard],
-      //   canDeactivate: [ProductEditGuard],
-      //   component: ApplianceListComponent
-      // },
-      // {
-      //   path: 'homegoods',
-      //   // canActivate: [AuthenticGuard],
-      //   // canLoad: [AuthenticGuard],
-      //   canDeactivate: [ProductEditGuard],
-      //   component: HomeGoodsListComponent
-      // },
-      // {
-      //   path: 'foods',
-      //   // canActivate: [AuthenticGuard],
-      //   // canLoad: [AuthenticGuard],
-      //   canDeactivate: [ProductEditGuard],
-      //   component: FoodListComponent
+      //   // canDeactivate: [ProductEditGuard],
+      //   component: CartComponent
       // }
     ])
   ],
@@ -71,9 +65,10 @@ import { AuthenticGuard } from '../user/authentic-guard.service';
     GeneralListComponent,
     ProductDetailComponent,
     ProductEditComponent,
-    ApplianceListComponent,
-    FoodListComponent,
-    HomeGoodsListComponent
+    ProductListComponent,
+    CartComponent
+    // FoodListComponent,
+    // HomeGoodsListComponent
   ]
 })
 export class ProductModule { }

@@ -1,6 +1,6 @@
 import { InMemoryDbService } from 'angular-in-memory-web-api';
 
-import { Product, Appliances, Foods, HomeGoods } from './product';
+import { Product } from './product';
 
 export class ProductData implements InMemoryDbService {
 
@@ -8,221 +8,210 @@ export class ProductData implements InMemoryDbService {
     const products: Product[] = [
       {
         'id': 1,
-        'productName': 'Leaf Rake',
-        'productCode': 'GDN-0011',
-        'releaseDate': 'March 19, 2018',
-        'description': 'Leaf rake with 48-inch wooden handle',
-        'price': 19.95,
+        'productName': 'Oven',
+        'productColor': 'Black',
+        'availability': 'In Stock',
+        'description': 'Samsung',
+        'price': 199.95,
         'starRating': 3.2,
-        'imageUrl': 'https://openclipart.org/image/300px/svg_to_png/26215/Anonymous_Leaf_Rake.png',
-        'tags': ['rake', 'leaf', 'yard', 'home']
+        'imageUrl': 'https://openclipart.org/image/300px/svg_to_png/6622/liftarn-Washing-machine-1.png',
+        'tags': [''],
+        'productType': 'Appliances'
       },
       {
         'id': 2,
-        'productName': 'Garden Cart',
-        'productCode': 'GDN-0023',
-        'releaseDate': 'March 18, 2018',
-        'description': '15 gallon capacity rolling garden cart',
+        'productName': 'Washer',
+        'productColor': 'White',
+        'availability': 'In Stock',
+        'description': 'Samsung',
+        'price': 199.95,
+        'starRating': 3.2,
+        'imageUrl': 'https://openclipart.org/image/300px/svg_to_png/6622/liftarn-Washing-machine-1.png',
+        'tags': [''],
+        'productType': 'Appliances'
+      },
+      {
+        'id': 3,
+        'productName': 'Dryer',
+        'productColor': 'White',
+        'availability': 'In Stock',
+        'description': 'Samsung',
+        'price': 199.95,
+        'starRating': 3.2,
+        'imageUrl': 'https://openclipart.org/image/300px/svg_to_png/6622/liftarn-Washing-machine-1.png',
+        'tags': [''],
+        'productType': 'Appliances'
+      },
+      {
+        'id': 4,
+        'productName': 'Sweater',
+        'productColor': 'Orange',
+        'availability': 'In Stock',
+        'description': 'Burberry',
         'price': 32.99,
         'starRating': 4.2,
-        'imageUrl': 'https://openclipart.org/image/300px/svg_to_png/58471/garden_cart.png'
+        'imageUrl': 'https://openclipart.org/image/300px/svg_to_png/213607/Pullover-lineart.png',
+        'productType': 'Clothing'
       },
       {
         'id': 5,
-        'productName': 'Hammer',
-        'productCode': 'TBX-0048',
-        'releaseDate': 'May 21, 2018',
-        'description': 'Curved claw steel hammer',
+        'productName': 'Cardigan',
+        'productColor': 'Red',
+        'availability': 'In Stock',
+        'description': 'Burberry',
+        'price': 32.99,
+        'starRating': 4.2,
+        'imageUrl': 'https://openclipart.org/image/300px/svg_to_png/213607/Pullover-lineart.png',
+        'productType': 'Clothing'
+      },
+      {
+        'id': 6,
+        'productName': 'Scarf',
+        'productColor': 'Cream',
+        'availability': 'In Stock',
+        'description': 'Burberry',
+        'price': 32.99,
+        'starRating': 4.2,
+        'imageUrl': 'https://openclipart.org/image/300px/svg_to_png/213607/Pullover-lineart.png',
+        'productType': 'Clothing'
+      },
+      {
+        'id': 7,
+        'productName': 'Pie',
+        'productColor': 'Yellow',
+        'availability': 'In Stock',
+        'description': 'Apple',
         'price': 8.9,
         'starRating': 4.8,
-        'imageUrl': 'https://openclipart.org/image/300px/svg_to_png/73/rejon_Hammer.png',
-        'tags': ['tools', 'hammer', 'construction']
+        'imageUrl': 'https://openclipart.org/image/800px/svg_to_png/310794/1543137483.png',
+        'tags': [''],
+        'productType': 'Foods'
       },
       {
         'id': 8,
-        'productName': 'Saw',
-        'productCode': 'TBX-0022',
-        'releaseDate': 'May 15, 2018',
-        'description': '15-inch steel blade hand saw',
-        'price': 11.55,
-        'starRating': 3.7,
-        'imageUrl': 'https://openclipart.org/image/300px/svg_to_png/27070/egore911_saw.png'
+        'productName': 'Cake',
+        'productColor': 'Brown',
+        'availability': 'In Stock',
+        'description': 'Chocolate',
+        'price': 8.9,
+        'starRating': 4.8,
+        'imageUrl': 'https://openclipart.org/image/800px/svg_to_png/310794/1543137483.png',
+        'tags': [''],
+        'productType': 'Foods'
+      },
+      {
+        'id': 9,
+        'productName': 'Cookie',
+        'productColor': 'White',
+        'availability': 'In Stock',
+        'description': 'White Chocolate',
+        'price': 8.9,
+        'starRating': 4.8,
+        'imageUrl': 'https://openclipart.org/image/800px/svg_to_png/310794/1543137483.png',
+        'tags': [''],
+        'productType': 'Foods'
       },
       {
         'id': 10,
-        'productName': 'Video Game Controller',
-        'productCode': 'GMG-0042',
-        'releaseDate': 'October 15, 2018',
-        'description': 'Standard two-button video game controller',
-        'price': 35.95,
-        'starRating': 4.6,
-        'imageUrl': 'https://openclipart.org/image/300px/svg_to_png/120337/xbox-controller_01.png'
-      }
-    ];
-    const appliances: Appliances[] = [
+        'productName': 'Cutting Board',
+        'productColor': 'Green',
+        'availability': 'In Stock',
+        'description': 'Plastic',
+        'price': 11.55,
+        'starRating': 3.7,
+        'imageUrl': 'https://openclipart.org/image/800px/svg_to_png/301017/1524791345.png',
+        'productType': 'HomeGoods'
+      },
       {
         'id': 11,
-        'productName': 'TV',
-        'productCode': 'GDN-0011',
-        'releaseDate': 'March 19, 2018',
-        'description': 'Leaf rake with 48-inch wooden handle',
-        'price': 19.95,
-        'starRating': 3.2,
-        'imageUrl': 'https://openclipart.org/image/300px/svg_to_png/26215/Anonymous_Leaf_Rake.png',
-        'tags': ['rake', 'leaf', 'yard', 'home']
+        'productName': 'Dehydrator',
+        'productColor': 'Gray',
+        'availability': 'In Stock',
+        'description': 'Nesco',
+        'price': 111.55,
+        'starRating': 3.7,
+        'imageUrl': 'https://openclipart.org/image/800px/svg_to_png/301017/1524791345.png',
+        'productType': 'HomeGoods'
       },
       {
         'id': 12,
-        'productName': 'TV2',
-        'productCode': 'GDN-0023',
-        'releaseDate': 'March 18, 2018',
-        'description': '15 gallon capacity rolling garden cart',
-        'price': 32.99,
-        'starRating': 4.2,
-        'imageUrl': 'https://openclipart.org/image/300px/svg_to_png/58471/garden_cart.png'
+        'productName': 'Knife',
+        'productColor': 'Brown',
+        'availability': 'In Stock',
+        'description': 'Fukinawa',
+        'price': 11.55,
+        'starRating': 3.7,
+        'imageUrl': 'https://openclipart.org/image/800px/svg_to_png/301017/1524791345.png',
+        'productType': 'HomeGoods'
+      },
+      {
+        'id': 13,
+        'productName': 'Necklace',
+        'productColor': 'Platinum',
+        'availability': 'In Stock',
+        'description': 'Platinum',
+        'price': 135.95,
+        'starRating': 4.6,
+        'imageUrl': 'https://openclipart.org/image/800px/svg_to_png/208870/artifact-necklace-imperial.png',
+        'productType': 'Jewelry'
+      },
+      {
+        'id': 14,
+        'productName': 'Earrings',
+        'productColor': 'Silver',
+        'availability': 'In Stock',
+        'description': 'Silver',
+        'price': 235.95,
+        'starRating': 4.6,
+        'imageUrl': 'https://openclipart.org/image/800px/svg_to_png/208870/artifact-necklace-imperial.png',
+        'productType': 'Jewelry'
       },
       {
         'id': 15,
-        'productName': 'TV3',
-        'productCode': 'TBX-0048',
-        'releaseDate': 'May 21, 2018',
-        'description': 'Curved claw steel hammer',
-        'price': 8.9,
-        'starRating': 4.8,
-        'imageUrl': 'https://openclipart.org/image/300px/svg_to_png/73/rejon_Hammer.png',
-        'tags': ['tools', 'hammer', 'construction']
+        'productName': 'Ring',
+        'productColor': 'Clear',
+        'availability': 'In Stock',
+        'description': 'Diamond',
+        'price': 6635.95,
+        'starRating': 4.6,
+        'imageUrl': 'https://openclipart.org/image/800px/svg_to_png/208870/artifact-necklace-imperial.png',
+        'productType': 'Jewelry'
+      },
+      {
+        'id': 16,
+        'productName': 'Pumps',
+        'productColor': 'Purple',
+        'availability': 'In Stock',
+        'description': '5 Inches',
+        'price': 55.95,
+        'starRating': 4.6,
+        'imageUrl': 'https://openclipart.org/image/800px/svg_to_png/215041/Schuhe-lineart.png',
+        'productType': 'Shoes'
+      },
+      {
+        'id': 17,
+        'productName': 'Loafers',
+        'productColor': 'Brown',
+        'availability': 'In Stock',
+        'description': 'Soft',
+        'price': 85.95,
+        'starRating': 4.6,
+        'imageUrl': 'https://openclipart.org/image/800px/svg_to_png/215041/Schuhe-lineart.png',
+        'productType': 'Shoes'
       },
       {
         'id': 18,
-        'productName': 'TV4',
-        'productCode': 'TBX-0022',
-        'releaseDate': 'May 15, 2018',
-        'description': '15-inch steel blade hand saw',
-        'price': 11.55,
-        'starRating': 3.7,
-        'imageUrl': 'https://openclipart.org/image/300px/svg_to_png/27070/egore911_saw.png'
-      },
-      {
-        'id': 19,
-        'productName': 'TV5',
-        'productCode': 'GMG-0042',
-        'releaseDate': 'October 15, 2018',
-        'description': 'Standard two-button video game controller',
+        'productName': 'Sneakers',
+        'productColor': 'Black',
+        'availability': 'In Stock',
+        'description': 'Nike',
         'price': 35.95,
         'starRating': 4.6,
-        'imageUrl': 'https://openclipart.org/image/300px/svg_to_png/120337/xbox-controller_01.png'
-      }
-    ];
-    const foods: Foods[] = [
-      {
-        'id': 21,
-        'productName': 'Food1',
-        'productCode': 'GDN-0011',
-        'releaseDate': 'March 19, 2018',
-        'description': 'Leaf rake with 48-inch wooden handle',
-        'price': 19.95,
-        'starRating': 3.2,
-        'imageUrl': 'https://openclipart.org/image/300px/svg_to_png/26215/Anonymous_Leaf_Rake.png',
-        'tags': ['rake', 'leaf', 'yard', 'home']
-      },
-      {
-        'id': 22,
-        'productName': 'Food2',
-        'productCode': 'GDN-0023',
-        'releaseDate': 'March 18, 2018',
-        'description': '15 gallon capacity rolling garden cart',
-        'price': 32.99,
-        'starRating': 4.2,
-        'imageUrl': 'https://openclipart.org/image/300px/svg_to_png/58471/garden_cart.png'
-      },
-      {
-        'id': 25,
-        'productName': 'Food3',
-        'productCode': 'TBX-0048',
-        'releaseDate': 'May 21, 2018',
-        'description': 'Curved claw steel hammer',
-        'price': 8.9,
-        'starRating': 4.8,
-        'imageUrl': 'https://openclipart.org/image/300px/svg_to_png/73/rejon_Hammer.png',
-        'tags': ['tools', 'hammer', 'construction']
-      },
-      {
-        'id': 28,
-        'productName': 'Food4',
-        'productCode': 'TBX-0022',
-        'releaseDate': 'May 15, 2018',
-        'description': '15-inch steel blade hand saw',
-        'price': 11.55,
-        'starRating': 3.7,
-        'imageUrl': 'https://openclipart.org/image/300px/svg_to_png/27070/egore911_saw.png'
-      },
-      {
-        'id': 29,
-        'productName': 'Food5',
-        'productCode': 'GMG-0042',
-        'releaseDate': 'October 15, 2018',
-        'description': 'Standard two-button video game controller',
-        'price': 35.95,
-        'starRating': 4.6,
-        'imageUrl': 'https://openclipart.org/image/300px/svg_to_png/120337/xbox-controller_01.png'
-      }
-    ];
-    const homegoods: HomeGoods[] = [
-      {
-        'id': 31,
-        'productName': 'HomeGoods',
-        'productCode': 'GDN-0011',
-        'releaseDate': 'March 19, 2018',
-        'description': 'Leaf rake with 48-inch wooden handle',
-        'price': 19.95,
-        'starRating': 3.2,
-        'imageUrl': 'https://openclipart.org/image/300px/svg_to_png/26215/Anonymous_Leaf_Rake.png',
-        'tags': ['rake', 'leaf', 'yard', 'home']
-      },
-      {
-        'id': 32,
-        'productName': 'HomeGoods',
-        'productCode': 'GDN-0023',
-        'releaseDate': 'March 18, 2018',
-        'description': '15 gallon capacity rolling garden cart',
-        'price': 32.99,
-        'starRating': 4.2,
-        'imageUrl': 'https://openclipart.org/image/300px/svg_to_png/58471/garden_cart.png'
-      },
-      {
-        'id': 35,
-        'productName': 'HomeGoods',
-        'productCode': 'TBX-0048',
-        'releaseDate': 'May 21, 2018',
-        'description': 'Curved claw steel hammer',
-        'price': 8.9,
-        'starRating': 4.8,
-        'imageUrl': 'https://openclipart.org/image/300px/svg_to_png/73/rejon_Hammer.png',
-        'tags': ['tools', 'hammer', 'construction']
-      },
-      {
-        'id': 38,
-        'productName': 'HomeGoods',
-        'productCode': 'TBX-0022',
-        'releaseDate': 'May 15, 2018',
-        'description': '15-inch steel blade hand saw',
-        'price': 11.55,
-        'starRating': 3.7,
-        'imageUrl': 'https://openclipart.org/image/300px/svg_to_png/27070/egore911_saw.png'
-      },
-      {
-        'id': 39,
-        'productName': 'HomeGoods',
-        'productCode': 'GMG-0042',
-        'releaseDate': 'October 15, 2018',
-        'description': 'Standard two-button video game controller',
-        'price': 35.95,
-        'starRating': 4.6,
-        'imageUrl': 'https://openclipart.org/image/300px/svg_to_png/120337/xbox-controller_01.png'
+        'imageUrl': 'https://openclipart.org/image/800px/svg_to_png/215041/Schuhe-lineart.png',
+        'productType': 'Shoes'
       }
     ];
 
-
-    return { products, appliances, foods, homegoods };
+    return { products };
   }
 }

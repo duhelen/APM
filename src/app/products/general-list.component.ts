@@ -1,39 +1,67 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 
-import { Product, Appliances, Foods, HomeGoods } from './product';
+import { Product } from './product';
 import { ProductService } from './product.service';
+import { ProductListComponent } from './products.component'
+import { ProductData } from './product-data';
 
 @Component({
-  templateUrl: './product-list.component.html',
-  styleUrls: ['./product-list.component.css']
+  templateUrl: './general-list.component.html',
+  styleUrls: ['./general-list.component.css']
 })
 export class GeneralListComponent implements OnInit {
-  showingFoods: Boolean = false;
-  showingHomeGoods: Boolean = false;
-  showingAppliances: Boolean = false;
+
+ @ViewChild("productlistcomponent") productlistcomponent: ProductListComponent;
+
+  types: String[];
+  productTypes: any[]; 
 
 
 
 constructor(private productService: ProductService) { }
 
-  displayFoods() {
-    this.showingFoods = true;
-    this.showingAppliances = false;
-    this.showingHomeGoods= false;
+  
+  getUniqueProductTypes(): String[] { //returning product array
+    var types: String[] = []
+
+    this.productService.getProducts().subscribe(
+      products => {
+        console.log(products);
+        for (var i = 0; i < products.length; i++) {
+          var found = false
+
+           for (var j = 0; j < types.length; j++) {
+             if (products[i].productType == types[j]) {
+               var found = true
+               continue;
+             }
+           }
+
+           if (!found) {
+             types.push(products[i].productType)
+           }
+        }
+      });
+
+    return types;
   }
-  displayAppliances() {
-    this.showingFoods = false;
-    this.showingAppliances = true;
-    this.showingHomeGoods= false;
+
+    // html should execute this function 
+  displayProductsByType(type: string) {
+    this.productService.getProductsByType(type).subscribe(
+       product => this.productlistcomponent.setProducts(product))
   }
-  displayHomeGoods() {
-    this.showingFoods = false;
-    this.showingAppliances = false;
-    this.showingHomeGoods= true;
-  }
+
 
   ngOnInit() {
-
+     this.types = this.getUniqueProductTypes();
+    //  this.displayProductsByType('appliances');
+    //  this.displayProductsByType('clothing');
+    //  this.displayProductsByType('foods');
+    //  this.displayProductsByType('homegoods');
+    //  this.displayProductsByType('jewelry');
+    
+    // create the navbar with these types
   }
 }
 

@@ -47,8 +47,11 @@ export class ProductEditComponent implements OnInit, AfterViewInit, OnDestroy
         minlength: 'Product name must be at least three characters.',
         maxlength: 'Product name cannot exceed 20 characters.'
       },
-      productCode: {
-        required: 'Product code is required.'
+      productColor: {
+        required: 'Product color is required.'
+      },
+      productType: {
+        required: 'Product type is required.'
       },
       starRating: {
         range: 'Rate the product between 1 (lowest) and 5 (highest).'
@@ -67,7 +70,8 @@ export class ProductEditComponent implements OnInit, AfterViewInit, OnDestroy
       productName: ['', [Validators.required,
                          Validators.minLength(3),
                          Validators.maxLength(20)]],
-      productCode: ['', Validators.required],
+      productColor: ['', Validators.required],
+      productType: ['', Validators.required],
       starRating: ['', NumberValidators.range(1, 5)],
         //number.validator.ts in shared, can be reused 
       tags: this.fb.array([]), //dynamically duplicate
@@ -136,7 +140,8 @@ export class ProductEditComponent implements OnInit, AfterViewInit, OnDestroy
     // Update the data on the form
     this.productForm.patchValue({
       productName: this.product.productName,
-      productCode: this.product.productCode,
+      productColor: this.product.productColor,
+      productType: this.product.productType,
       starRating: this.product.starRating,
       description: this.product.description
     });

@@ -16,7 +16,7 @@
         </div>
         <div class="row">
           <div class="col-md-3">Code:</div>
-          <div class="col-md-6">{{product.productCode}}</div>
+          <div class="col-md-6">{{product.productColor}}</div>
         </div>
         <div class="row">
           <div class="col-md-3">Description:</div>
@@ -24,14 +24,14 @@
         </div>
         <div class="row">
           <div class="col-md-3">Availability:</div>
-          <div class="col-md-6">{{product.releaseDate}}</div>
+          <div class="col-md-6">{{product.availability}}</div>
         </div>
         <div class="row">
           <div class="col-md-3">Price:</div>
           <div class="col-md-6">{{product.price|currency:"USD":"symbol"}}</div>
         </div>
         <div class="row">
-          <div class="col-md-3">5 Star Rating:</div>
+          <div class="col-md-3">Customer Rating:</div>
           <div class="col-md-6">
             <pm-star [rating]="product.starRating">
             </pm-star>

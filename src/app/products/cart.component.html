@@ -1,0 +1,52 @@
+<div class="card">
+    <div class="card-header">
+      {{pageTitle}}
+    </div>
+
+  
+      <div class="table-responsive">
+        <!-- <table class="table mb-0"
+               *ngIf="products && products.length"> -->
+          <thead>
+            <tr>
+              <th>Product</th>
+              <th>Color</th>
+              <th>Availability</th>
+              <th>Price</th>
+              <th>Customer Rating</th>
+              <th>Sub Total</th>
+            </tr>
+          </thead>
+          <tr>
+              <td>Total</td>
+              
+          </tr>
+        </div>
+        
+          <!-- 
+              <td>
+                <a [routerLink]="['/products', product.id]">
+                  {{ product.productName }}
+                </a>
+              </td>
+              
+              <td>{{ product.productColor }}</td>
+              <td>{{ product.availability }}</td>
+              <td>{{ product.price | currency:"USD":"symbol":"1.2-2" }}</td>
+              <td>
+                <pm-star [rating]="product.starRating">
+                </pm-star>
+              </td>
+              
+            </tr>
+          </tbody>
+        </table>
+      </div>
+  
+    </div>
+  </div> -->
+  
+  <div *ngIf="errorMessage"
+       class="alert alert-danger">
+    Error: {{ errorMessage }}
+  </div>
